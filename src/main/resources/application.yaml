@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: demo-ai-assistant
+  ai:
+    openai:
+      api-key: ${GROK_API_KEY}
+      base-url: https://api.groq.com/openai/v1
+      chat:
+        options:
+          model: openai/gpt-oss-20b
+          max-tokens: 400
+  logging:
+    level:
+      com.enterprisecodelabs: INFO
+
