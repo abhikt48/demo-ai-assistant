@@ -12,7 +12,7 @@ import reactor.core.publisher.Flux;
 @RequestMapping("/ai")
 public class SearchController {
 
-    private final SearchService searchService;
+    private SearchService searchService;
 
     public SearchController(SearchService searchService){
         this.searchService = searchService;
@@ -24,8 +24,7 @@ public class SearchController {
     }
 
     @GetMapping(path = "/search/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<String> searchStream(@RequestParam String input){
+    public Flux<String> searchStream(String input){
         return searchService.searchStream(input);
     }
-
 }

@@ -9,7 +9,4 @@ spring:
         options:
           model: openai/gpt-oss-20b
           max-tokens: 400
-  logging:
-    level:
-      com.enterprisecodelabs: INFO
 
