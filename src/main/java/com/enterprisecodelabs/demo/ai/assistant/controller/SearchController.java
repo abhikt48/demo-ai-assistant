@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 @RestController
-@RequestMapping("/ai")
+@RequestMapping("/ai/")
 public class SearchController {
 
-    private SearchService searchService;
+    private final SearchService searchService;
 
-    public SearchController(SearchService searchService){
+    public SearchController(SearchService searchService) {
         this.searchService = searchService;
     }
 
@@ -24,7 +24,7 @@ public class SearchController {
     }
 
     @GetMapping(path = "/search/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<String> searchStream(String input){
+    public Flux<String> searchStream(@RequestParam String input){
         return searchService.searchStream(input);
     }
 }

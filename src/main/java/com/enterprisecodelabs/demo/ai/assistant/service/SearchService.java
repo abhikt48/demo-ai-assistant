@@ -17,7 +17,7 @@ public class SearchService {
 
     public String search(String input){
         Generation chatResult = openAiChatModel.call(new Prompt(input)).getResult();
-        return chatResult.getOutput().getText();
+        return  chatResult.getOutput().getText();
     }
 
     public Flux<String> searchStream(String input){
