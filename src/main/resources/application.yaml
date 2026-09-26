@@ -1,7 +1,16 @@
 spring:
   application:
     name: demo-ai-assistant
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo_ai_assistant
+    username: abhishek
+    password:
   ai:
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
     openai:
       api-key: ${GROK_API_KEY}
       base-url: https://api.groq.com/openai/v1
